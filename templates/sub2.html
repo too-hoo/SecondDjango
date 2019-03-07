@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "base.html" %}
+    <meta charset="UTF-8">
+    <title>{% block title %}
+        汽车网站
+    {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+    <ul>
+        <li>{{ mobile_product1 }}</li>
+        <li>{{ mobile_product2 }}</li>
+    </ul>
+{% endblock %}
+{% block footer %}
+    <p>感谢您光临本店</p>
+{% endblock %}
+</body>
+</html>

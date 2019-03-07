@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断两个值是否相等</title>
+</head>
+<body>
+    {% ifequal user 'geekori' %}
+        <h1>用户已经登录</h1>
+    {% else %}
+        <h1>用户未登录</h1>
+    {% endifequal %}
+    {% ifequal currentUser 'geekori'  %}
+        <h2>用户是geekori</h2>
+    {% endifequal %}
+    {# 1、 This is comment 单行注释，跨行是会失败的 #}
+    {#  abc
+        xyz
+    #}
+    {%  comment  这种注释是不会发送到客户端的，但是很多时候，我们并不希望将注释发送过去%}
+        多行注释
+    {% endcomment %}
+    <!--Html的注释是会发送到客户端的-->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if today_is_weekend %}
+        <p>今天是周末，太好啦！</p>
+    {% elif field1 %}
+        <p>今天什么情况？</p>
+    {% else %}
+        <p>今天不是周末，要上班</p>
+    {% endif %}
+    It is now {{ current_date }}
+    {% if field1 and field2 %}
+         {% if field3 %}
+                {{ field3 }}
+         {% endif %}
+    <ul>
+        <li>{{ field1 }}</li>
+        <li>{{ field2 }}</li>
+    </ul>
+    {% elif field1 or field2 or field3 %}
+    <ul>
+        <li>{{ field1 }},{{ field2 }},{{ field3 }}</li>
+    </ul>
+    {% elif not field1 %}
+    <ul>
+        <li>{{ field2 }}</li>
+        <li>{{ field3 }}</li>
+    </ul>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+</head>
+<body>
+    <ul>
+        <li>
+            {{ name|lower }}
+        </li>
+        <li>
+            {{ name|upper }}
+        </li>
+        <li>
+            {{ productName|truncatewords:"3" }}
+        </li>
+        <li>
+            {{ mytime|date:"F j,Y"}}
+        </li>
+        <li>
+            {{ name|length }}
+        </li>
+    </ul>
+</body>
+</html>

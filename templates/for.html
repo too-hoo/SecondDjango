@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for标签</title>
+</head>
+<body>
+    <ul>
+        {% for person in persons %}
+            {% if forloop.first %}
+                <li style="color: red">
+            {% elif forloop.last %}
+                <li style="color: blue">
+            {% else %}
+                <li>
+            {% endif %}
+                {{ forloop.revcounter0 }}--{{ forloop.revcounter }}--{{ forloop.counter0 }}--{{ forloop.counter }}--{{ person.name }}--{{ person.age }}</li>
+        {% endfor %}
+    <p>
+
+    </p>
+    {% for person in persons %}
+        {{ person.name }}
+        {% if not forloop.last %} <!--控制最后不要显示出逗号-->
+        ,
+        {% endif %}
+    {% endfor %}
+    </ul>
+</body>
+</html>

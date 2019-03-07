@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+</head>
+<body>
+    <p>
+        You search for :<strong>{{ query }}</strong>
+    </p>
+{% if movies %}
+    <p>Found {{movies|length}} movies</p>
+    <ul>
+    {% for movie in movies %}
+        <li>{{movie.name}}</li>
+    {% endfor%}
+    </ul>
+{% else %}
+    <p>No movies matched</p>
+{% endif%}
+</body>
+</html>
