@@ -163,7 +163,7 @@ def oneObject(request):
     #<class 'django.db.models.query.QuerySet'>
     try:
         m = Movie.objects.get(name = '流浪地球')
-        print(type(m))                                          # 返回的是一个Movie
+                                                  # 返回的是一个Movie
         print(type(Movie.objects.filter(name = '流浪地球')))     # 返回的是一个QuerySet
     except Movie.DoesNotExist:
         return HttpResponse('没有查询到任何数据！')

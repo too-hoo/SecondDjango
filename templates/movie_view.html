@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie View</title>
+</head>
+<body>
+    <ul>
+        {% for movie in movies %}
+             <li>{{ movie.name }}:{{ movie.type }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
