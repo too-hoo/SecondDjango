@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+{% if error %}
+    <p style="color: red">输入电影的名字不能大于10</p>
+{% endif %}
+    <p>
+        You search for :<strong>{{ query }}</strong>
+    </p>
+{% if movies %}
+    <p>Found {{movies|length}} movies</p>
+<ul>
+    {% for movie in movies %}
+    <li>{{movie.name}}</li>
+    {% endfor%}
+</ul>
+{% else %}
+<p>No movies matched</p>
+{% endif%}
+<form action="/searchVerify" method='get'>
+    <input type='text' name="name">
+    <input type="submit" value="搜索">
+</form>
+</body>
+</html>

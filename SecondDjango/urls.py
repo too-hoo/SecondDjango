@@ -25,6 +25,9 @@ from .views import Dynamicurl
 from .views import MyTemplate
 from .views import DB
 from .views import Form
+from .views import CommentViewClass
+
+from django.views.generic.base import RedirectView
 
 # 动态URL的使用
 urlpatterns = [
@@ -63,5 +66,17 @@ urlpatterns = [
     url(r'^updateData/$', DB.updateData),
     url(r'^requestInfo/$', Form.requestInfo),
     url(r'^searchForm/$', Form.search_form),
-    url(r'^search/$', Form.search)
+    url(r'^search/$', Form.search),
+    url(r'^searchVerify/$', Form.searchVerify),
+    url(r'^searchVerify2/$', Form.searchVerify2),
+    url(r'^contact/$', Form.contact),
+    url(r'^myview/$', CommentViewClass.MyView.as_view()),   # 使用里面内置的方法返回相应的程序，注意是as_view()
+    url(r'^homepage/$',CommentViewClass.HomePageView.as_view()),
+    url(r'^geekori/$', RedirectView.as_view(url='https://geekori.com')),
+    url(r'^baidu/$', RedirectView.as_view(url='https://baidu.com')),
+    url(r'^movie_view/$',CommentViewClass.MovieView.as_view()),
+    url(r'^query_movie_view/$',CommentViewClass.QueryMovieView.as_view()),
+    url(r'^param_query_movie_view/$', CommentViewClass.ParamQueryMovieView.as_view()),
+    # <pk>表示主键 \d+ 表示至少有一个数字
+    url(r'^movie_detail/(?P<pk>\d+)/$', CommentViewClass.MovieDetailView.as_view()),
 ]
